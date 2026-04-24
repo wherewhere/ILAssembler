@@ -41,9 +41,9 @@ jobs:
   pack-and-publish:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     needs: build-and-test
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     env:
-      Solution_Name: ILAssembler/ILAssembler.csproj
+      Solution_Name: ./src/ILAssembler/ILAssembler.csproj
 
     steps:
       - name: Checkout
@@ -57,14 +57,14 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Install Dependencies
-        run: dotnet restore
+        run: dotnet restore $Solution_Name
 
       - name: Pack
-        run: dotnet pack --no-restore --version-suffix build.${{ github.run_number }}.${{ github.run_attempt }} -o "nugets"
+        run: dotnet pack $Solution_Name --no-restore --version-suffix build.${{ github.run_number }}.${{ github.run_attempt }} -o "nugets"
 
       - name: Publish
         if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
-        run: dotnet nuget push nugets/**.nupkg --source $env:NUGET_SOURCE --skip-duplicate --api-key $env:MYGET_KEY
+        run: dotnet nuget push ./nugets/*nupkg --source $NUGET_SOURCE --skip-duplicate --api-key $MYGET_KEY
         env:
           NUGET_SOURCE: https://www.myget.org/F/where/api/v2/package
           MYGET_KEY: ${{ secrets.MYGET_KEY }}
