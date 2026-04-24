@@ -1,0 +1,15 @@
+﻿<Project>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="*" PrivateAssets="all">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
+    <PackageReference Include="xunit.core" Version="2.9.3" IsImplicitlyDefined="true" PrivateAssets="all" Publish="true" ExcludeAssets="build" />
+    <PackageReference Include="xunit.analyzers" Version="1.27.0" IsImplicitlyDefined="true" PrivateAssets="all" Publish="true" />
+    <PackageReference Include="xunit.assert" Version="2.9.3" IsImplicitlyDefined="true" PrivateAssets="all" Publish="true" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkVersion)" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" GeneratePathProperty="true" />
+  </ItemGroup>
+</Project>
