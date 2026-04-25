@@ -7,7 +7,7 @@
     <PackageProjectUrl>https://dot.net</PackageProjectUrl>
     <PackageReleaseNotes>https://go.microsoft.com/fwlink/?LinkID=799421</PackageReleaseNotes>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/dotnet/dotnet/tree/main/src/runtime/src/tools/ilasm</RepositoryUrl>
+    <RepositoryUrl>https://github.com/dotnet/runtime/tree/main/src/tools/ilasm</RepositoryUrl>
     <VersionPrefix>11.0.0</VersionPrefix>
     <Description>The .NET IL Assembler.</Description>
   </PropertyGroup>
@@ -31,6 +31,8 @@
 
   <PropertyGroup>
     <SystemCommandLineVersion>$(SystemCommandLinePackageVersion)</SystemCommandLineVersion>
+    <Antlr4RuntimeStandardVersion>4.13.1</Antlr4RuntimeStandardVersion>
+    <Antlr4BuildTasksVersion>12.14.0</Antlr4BuildTasksVersion>
     <Antlr4RuntimeStandardVersion>4.13.1</Antlr4RuntimeStandardVersion>
     <MicrosoftNETTestSdkVersion>18.4.0</MicrosoftNETTestSdkVersion>
     <CoverletCollectorVersion>10.0.0</CoverletCollectorVersion>

@@ -1,5 +1,5 @@
 > [!NOTE]
-> Forked from https://github.com/dotnet/dotnet/tree/main/src/runtime/src/tools/ilasm
+> Forked from https://github.com/dotnet/runtime/tree/main/src/tools/ilasm
 
 # ILAssembler Build Workflow
 
@@ -10,15 +10,15 @@ This directory contains the ILAssembler tool and its build instructions.
 ### Regular Builds
 For everyday development and regular builds, simply run:
 
-```
-./dotnet.sh build src/tools/ilasm/src/ILAssembler
+```sh
+dotnet build src/ILAssembler
 ```
 
 ### Updating Generated Files
 If you modify any `.g4` grammar files (rare), you must regenerate the parser and related files:
 
-```
-./dotnet.sh build src/tools/ilasm/src/ILAssembler/gen
+```sh
+dotnet build src/ILAssembler/gen
 ```
 
 This will update the generated files before building the main project.
