@@ -64,9 +64,9 @@ jobs:
 
       - name: Publish
         if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
-        run: dotnet nuget push ./nugets/*nupkg --source $NUGET_SOURCE --skip-duplicate --api-key $MYGET_KEY
+        run: dotnet nuget push ./nugets/*.nupkg --source $NUGET_SOURCE --skip-duplicate --api-key $MYGET_KEY
         env:
-          NUGET_SOURCE: https://www.myget.org/F/where/api/v2/package
+          NUGET_SOURCE: https://www.myget.org/F/where/api/v3/index.json
           MYGET_KEY: ${{ secrets.MYGET_KEY }}
 
       - name: Upload
