@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -47,7 +47,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -64,13 +64,13 @@ jobs:
 
       - name: Publish
         if: ${{ github.event_name == 'push' && github.ref_name == 'main' }}
-        run: dotnet nuget push ./nugets/*nupkg --source $NUGET_SOURCE --skip-duplicate --api-key $MYGET_KEY
+        run: dotnet nuget push ./nugets/*.nupkg --source $NUGET_SOURCE --skip-duplicate --api-key $MYGET_KEY
         env:
-          NUGET_SOURCE: https://www.myget.org/F/where/api/v2/package
+          NUGET_SOURCE: https://www.myget.org/F/where/api/v3/index.json
           MYGET_KEY: ${{ secrets.MYGET_KEY }}
 
       - name: Upload
         uses: actions/upload-artifact@v6
         with:
-          name: Nuget Package
+          name: NuGet Package
           path: nugets/**
