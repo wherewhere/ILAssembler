@@ -22,19 +22,31 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <NetCoreAppToolCurrentVersion>11.0</NetCoreAppToolCurrentVersion>
+    <NetCoreAppToolCurrent>net$(NetCoreAppToolCurrentVersion)</NetCoreAppToolCurrent>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <CoreClrProjectRoot>$(MSBuildThisFileDirectory)</CoreClrProjectRoot>
   </PropertyGroup>
 
   <PropertyGroup>
-    <SystemCommandLinePackageVersion>2.0.7</SystemCommandLinePackageVersion>
+    <MicrosoftDotNetXUnitExtensionsPackageVersion>12.0.0-*</MicrosoftDotNetXUnitExtensionsPackageVersion>
+    <SystemCommandLinePackageVersion>2.0.14</SystemCommandLinePackageVersion>
   </PropertyGroup>
 
   <PropertyGroup>
+    <MicrosoftDotNetXUnitExtensionsVersion>$(MicrosoftDotNetXUnitExtensionsPackageVersion)</MicrosoftDotNetXUnitExtensionsVersion>
     <SystemCommandLineVersion>$(SystemCommandLinePackageVersion)</SystemCommandLineVersion>
-    <Antlr4RuntimeStandardVersion>4.13.1</Antlr4RuntimeStandardVersion>
     <Antlr4BuildTasksVersion>12.14.0</Antlr4BuildTasksVersion>
     <Antlr4RuntimeStandardVersion>4.13.1</Antlr4RuntimeStandardVersion>
-    <MicrosoftNETTestSdkVersion>18.4.0</MicrosoftNETTestSdkVersion>
-    <CoverletCollectorVersion>10.0.0</CoverletCollectorVersion>
+    <MicrosoftNETTestSdkVersion>18.11.0</MicrosoftNETTestSdkVersion>
+    <CoverletCollectorVersion>10.1.0</CoverletCollectorVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <XUnitVersion>2.9.3</XUnitVersion>
+    <XUnitAnalyzersVersion>1.27.0</XUnitAnalyzersVersion>
+    <XUnitRunnerVisualStudioVersion>4.0.1</XUnitRunnerVisualStudioVersion>
   </PropertyGroup>
 </Project>
