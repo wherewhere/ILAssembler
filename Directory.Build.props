@@ -22,12 +22,19 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <TargetRid Condition="$(TargetRid) == ''">$(NETCoreSdkRuntimeIdentifier)</TargetRid>
+    <IsInBuildToolProject Condition="$(MSBuildProjectName.EndsWith('_inbuild'))">true</IsInBuildToolProject>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <NetCoreAppToolCurrentVersion>11.0</NetCoreAppToolCurrentVersion>
     <NetCoreAppToolCurrent>net$(NetCoreAppToolCurrentVersion)</NetCoreAppToolCurrent>
   </PropertyGroup>
 
   <PropertyGroup>
     <CoreClrProjectRoot>$(MSBuildThisFileDirectory)</CoreClrProjectRoot>
+    <CoreclrRuntimeBinDir>$(MSBuildThisFileDirectory)bin\</CoreclrRuntimeBinDir>
+    <RepositoryEngineeringDir>$(MSBuildThisFileDirectory)eng\</RepositoryEngineeringDir>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -46,7 +53,7 @@
 
   <PropertyGroup>
     <XUnitVersion>2.9.3</XUnitVersion>
-    <XUnitAnalyzersVersion>1.27.0</XUnitAnalyzersVersion>
+    <XUnitAnalyzersVersion>2.3.0</XUnitAnalyzersVersion>
     <XUnitRunnerVisualStudioVersion>4.0.1</XUnitRunnerVisualStudioVersion>
   </PropertyGroup>
 </Project>
