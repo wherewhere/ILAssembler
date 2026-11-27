@@ -381,6 +381,7 @@ namespace Microsoft.DotNet.ILAssembler.Tests
             Assert.Equal(4503599627370496d, BitConverter.Int64BitsToDouble(BinaryPrimitives.ReadInt64LittleEndian(data)));
         }
 
+#if NET11_0_OR_GREATER
         [Theory]
         [InlineData("")]
         [InlineData("cil")]
@@ -426,6 +427,7 @@ namespace Microsoft.DotNet.ILAssembler.Tests
 
             Assert.Equal(expected, ReadData(pe, field, Length));
         }
+#endif
 
         [Fact]
         public void DataDeclaration_SyntaxVariantsPreserveOffsetsAndReferenceFixups()

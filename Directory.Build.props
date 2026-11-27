@@ -29,17 +29,33 @@
   <PropertyGroup>
     <NetCoreAppToolCurrentVersion>11.0</NetCoreAppToolCurrentVersion>
     <NetCoreAppToolCurrent>net$(NetCoreAppToolCurrentVersion)</NetCoreAppToolCurrent>
+    <NetCoreAppMinimum>net10.0</NetCoreAppMinimum>
+    <NetFrameworkToolCurrent>net4.7.2</NetFrameworkToolCurrent>
   </PropertyGroup>
 
   <PropertyGroup>
     <CoreClrProjectRoot>$(MSBuildThisFileDirectory)</CoreClrProjectRoot>
     <CoreclrRuntimeBinDir>$(MSBuildThisFileDirectory)bin\</CoreclrRuntimeBinDir>
     <RepositoryEngineeringDir>$(MSBuildThisFileDirectory)eng\</RepositoryEngineeringDir>
+    <LibrariesProjectRoot>$(MSBuildThisFileDirectory)\libraries\</LibrariesProjectRoot>
+    <CoreLibSharedDir>$(LibrariesProjectRoot)\System.Private.CoreLib\src\</CoreLibSharedDir>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- File version numbers -->
+    <PackageVersionNet10>10.0.15</PackageVersionNet10>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Maintenance-Packages dependencies -->
+    <MicrosoftBclHashCodeVersion>6.0.0</MicrosoftBclHashCodeVersion>
+    <SystemMemoryVersion>4.6.3</SystemMemoryVersion>
+    <SystemRuntimeCompilerServicesUnsafeVersion>6.1.2</SystemRuntimeCompilerServicesUnsafeVersion>
   </PropertyGroup>
 
   <PropertyGroup>
     <MicrosoftDotNetXUnitExtensionsPackageVersion>12.0.0-*</MicrosoftDotNetXUnitExtensionsPackageVersion>
-    <SystemCommandLinePackageVersion>2.0.14</SystemCommandLinePackageVersion>
+    <SystemCommandLinePackageVersion>3.0.0</SystemCommandLinePackageVersion>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -47,8 +63,8 @@
     <SystemCommandLineVersion>$(SystemCommandLinePackageVersion)</SystemCommandLineVersion>
     <Antlr4BuildTasksVersion>12.14.0</Antlr4BuildTasksVersion>
     <Antlr4RuntimeStandardVersion>4.13.1</Antlr4RuntimeStandardVersion>
-    <MicrosoftNETTestSdkVersion>18.11.0</MicrosoftNETTestSdkVersion>
-    <CoverletCollectorVersion>10.1.0</CoverletCollectorVersion>
+    <MicrosoftNETTestSdkVersion>18.12.0</MicrosoftNETTestSdkVersion>
+    <CoverletCollectorVersion>10.1.1</CoverletCollectorVersion>
   </PropertyGroup>
 
   <PropertyGroup>
